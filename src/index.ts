@@ -11,8 +11,11 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import sharp from 'sharp';
+
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
+		sharp();
 		return new Response('Hello World!');
 	},
 } satisfies ExportedHandler<Env>;
